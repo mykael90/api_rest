@@ -28,14 +28,15 @@ class App {
 
   routes() {
     // Rotas abertas
+    this.app.use('/', _homeRoutes2.default);
     this.app.use('/tokens/', _tokenRoutes2.default);
-    this.app.use('/users/', _userRoutes.userOpenedRouter);
+    // this.app.use('/users/', userOpenedRoutes);
 
     // Middleware de autenticação
     this.app.use(_loginRequired2.default);
 
     // Rotas fechadas
-    this.app.use('/', _homeRoutes2.default);
+    this.app.use('/users/', _userRoutes.userOpenedRouter); // fechar por enquanto
     this.app.use('/users/', _userRoutes2.default);
     this.app.use('/alunos/', _alunoRoutes2.default);
     this.app.use('/fotos/', _fotoRoutes2.default);
