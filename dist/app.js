@@ -54,7 +54,7 @@ class App {
     // this.app.use('/users/', userOpenedRoutes);
 
     // Middleware de autenticação
-    this.app.use(_loginRequired2.default);
+    // this.app.use(loginRequired); //abrir por enquanto
 
     // Rotas fechadas
     this.app.use('/users/', _userRoutes.userOpenedRouter); // fechar por enquanto
