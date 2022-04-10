@@ -20,14 +20,14 @@ class UserController {
       const users = await User.findAll({ attributes: ['id', 'nome', 'email'] }); // retornar só esses 3 atributos
       return res.json(users);
     } catch (e) {
-      return res.json(null);
+      return res.json(e);
     }
   }
 
   // Show
   async show(req, res) {
     try {
-      const user = await User.findByPk(req.userId);
+      const user = await User.findByPk(req.params.id);
       const { id, nome, email } = user;
       return res.json({ id, nome, email });
     } catch (e) {

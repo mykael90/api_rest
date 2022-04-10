@@ -3,8 +3,8 @@ var _UserController = require('../controllers/UserController'); var _UserControl
 
 const router = new (0, _express.Router)();
 
-// router.get('/', userController.index); não precisa listar usuários
-router.get('/', _UserController2.default.show);
+router.get('/', _UserController2.default.index); // não precisa listar usuários
+router.get('/:id', _UserController2.default.show);
 router.put('/', _UserController2.default.update);
 router.delete('/', _UserController2.default.delete);
 

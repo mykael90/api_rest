@@ -3,8 +3,8 @@ import userController from '../controllers/UserController';
 
 const router = new Router();
 
-// router.get('/', userController.index); não precisa listar usuários
-router.get('/', userController.show);
+router.get('/', userController.index); // não precisa listar usuários
+router.get('/:id', userController.show);
 router.put('/', userController.update);
 router.delete('/', userController.delete);
 
